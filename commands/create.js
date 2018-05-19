@@ -96,6 +96,7 @@ module.exports.run = async (bot, message, args) => {
     users[message.author.id] = {
       race: frace,
       hp: HP,
+      maxhp: HP,
       hex: rcol,
       lvl: 1,
       xp: 0,
@@ -113,6 +114,7 @@ module.exports.run = async (bot, message, args) => {
     monsters[message.author.id] = {
       name: 'Trainer Reece',
       hp: 50,
+      maxhp: 50,
       lvl: 1,
       str: 8,
       con: 8
