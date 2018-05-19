@@ -92,7 +92,7 @@ module.exports.run = async (bot, message, args) => {
     let userEmbed = new Discord.RichEmbed()
     .setThumbnail((message.author.displayAvatarURL))
     .setColor(`${rcol}`)
-    .setDescription(`**Name:** Random Charecter\n**Race:** ${frace}\n**Race Perks:** ${rdesc}\n\n**Health:** ${HP}\n**Level:** N/A\n**Experience:** N/A\n\n**Strength:** ${STR}\n**Dexterity:** ${DEX}\n**Contitution:** ${CON}\n**Inteligence:** ${INT}\n**Wisdom:** ${WIS}\n**Charm:** ${CHA}`)
+    .setDescription(`**Name:** Random Charecter\n**Race:** ${frace}\n**Race Perks:** ${rdesc}\n\n**Health:** ${HP}\n**Level:** N/A\n**Experience:** N/A\n\n**Strength:** ${STR}\n**Dexterity:** ${DEX}\n**Concentration:** ${CON}\n**Inteligence:** ${INT}\n**Wisdom:** ${WIS}\n**Charm:** ${CHA}`)
     .setFooter(`${message.author.username} has been created successfully!`, message.author.displayAvatarURL);
     
     message.channel.send(userEmbed)
