@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 let users = require("../users.json");
+let inv = require("../inv.json");
 
 module.exports.run = async (bot, message, args) => {
   if(!users[message.author.id]) {
@@ -105,6 +106,18 @@ module.exports.run = async (bot, message, args) => {
       int: INT,
       wis: WIS,
       cha: CHA
+    }
+    
+    inv[message.author.id] = {
+      apple: 0,
+      grape: 0,
+      tomato: 0,
+      corn: 0,
+      egg: 0,
+      fists: 2,
+      dagger: 0,
+      sword: 0,
+      mace: 0
     }
     
     let userEmbed = new Discord.RichEmbed()
