@@ -56,8 +56,8 @@ module.exports.run = async (bot, message, args) => {
     let userEmbed = new Discord.RichEmbed()
     .setThumbnail((message.author.displayAvatarURL))
     .setColor("#ecf0f1")
-    .setDescription(`**Name:** ${message.author.username}\n**Race:** ${users[message.author.id].race}\n\n**Health:** ${users[message.author.id].hp}\n**Level:** ${users[message.author.id].lvl}\n**Experience:* ${users[message.author.id].xp}\n\n**Strength:** ${users[message.author.id].str}\n**Dexterity:** ${users[message.author.id].dex}\n**Contitution:** ${users[message.author.id].con}\n**Inteligence:** ${users[message.author.id].int}\n**Wisdom:** ${users[message.author.id].wis}\n**Charm:** ${users[message.author.id].cha}`)
-    .setFooter(`${message.author.username} created successfully!`, message.author.displayAvatarURL);
+    .setDescription(`**Name:** ${message.author.username}\n**Race:** ${users[message.author.id].race}\n\n**Health:** ${users[message.author.id].hp}\n**Level:** ${users[message.author.id].lvl}\n**Experience:** ${users[message.author.id].xp}\n\n**Strength:** ${users[message.author.id].str}\n**Dexterity:** ${users[message.author.id].dex}\n**Contitution:** ${users[message.author.id].con}\n**Inteligence:** ${users[message.author.id].int}\n**Wisdom:** ${users[message.author.id].wis}\n**Charm:** ${users[message.author.id].cha}`)
+    .setFooter(`${message.author.username} has been created successfully!`, message.author.displayAvatarURL);
     
     message.channel.send(userEmbed)
     return;
