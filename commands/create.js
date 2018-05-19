@@ -100,6 +100,7 @@ module.exports.run = async (bot, message, args) => {
       xp: 0,
       gold: GOLD,
       weapon: 'fists',
+      quests: 0,
       str: STR,
       dex: DEX,
       con: CON,
