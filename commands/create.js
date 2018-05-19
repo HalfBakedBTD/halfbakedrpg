@@ -111,7 +111,7 @@ module.exports.run = async (bot, message, args) => {
     }
     
     monsters[message.author.id] = {
-      name: 'Trainer',
+      name: 'Trainer Reece',
       hp: 50,
       lvl: 1,
       str: 8,
