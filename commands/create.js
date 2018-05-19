@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
     let RRace = Math.floor(Math.random() * 9) + 1;
     let frace = '';
     
-    if (RRace = 1) {
+    if (RRace === 1) {
       frace = 'Human'
       STR = STR + 1
       DEX = DEX + 1
@@ -24,46 +24,46 @@ module.exports.run = async (bot, message, args) => {
       WIS = WIS + 1
       CHA = CHA + 1
     }
-    if (RRace = 2) {
+    if (RRace === 2) {
       frace = 'Elf'
       DEX = DEX + 2
       WIS = WIS + 1
     }
-    if (RRace = 3) {
+    if (RRace === 3) {
       frace = 'Orc'
       STR = STR + 3
     }
-    if (RRace = 4) {
+    if (RRace === 4) {
       frace = 'Dragonborn'
       STR = STR + 2
       CHA = CHA + 1
     }
-    if (RRace = 5) {
+    if (RRace === 5) {
       frace = 'Dwarf'
       CON = CON + 2
       STR = STR + 1
     }
-    if (RRace = 6) {
+    if (RRace === 6) {
       frace = 'Gnome'
       INT = INT + 2
     }
-    if (RRace = 7) {
+    if (RRace === 7) {
       frace = 'Half-Orc'
       STR = STR + 2
       CON = CON + 1
     }
-    if (RRace = 8) {
+    if (RRace === 8) {
       frace = 'Half-Elf'
       CHA = CHA + 2
       WIS = WIS + 1
       DEX = DEX + 1
     }
-    if (RRace = 9) {
+    if (RRace === 9) {
       frace = 'Goliath'
       STR = STR + 2
       CON = CON + 1
     }
-    if (RRace = 10) {
+    if (RRace === 10) {
       frace = 'Goliath'
       CHA = CHA + 2
       INT = INT + 1
