@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 let users = require("../users.json");
 let inv = require("../inv.json");
+let monsters = require("../monsters.json");
 
 module.exports.run = async (bot, message, args) => {
   if(!users[message.author.id]) {
@@ -107,6 +108,14 @@ module.exports.run = async (bot, message, args) => {
       int: INT,
       wis: WIS,
       cha: CHA
+    }
+    
+    monsters[message.author.id] = {
+      name: 'Trainer',
+      hp: 50,
+      lvl: 1,
+      str: 8,
+      con: 8
     }
     
     inv[message.author.id] = {
