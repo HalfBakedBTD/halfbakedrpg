@@ -9,15 +9,15 @@ module.exports.run = async (bot, message, args) => {
     let die = Math.floor(Math.random() * 5) + 1;
     let attackEval = users[message.author.id].str + users[message.author.id].con;
     let strength = attackEval / 5;
-    Math.round(strength);
-    let damage = die + strength;
+    let strengthR = Math.round(strength);
+    let damage = die + strengthR;
     monsters[message.author.id].hp = monsters[message.author.id].hp - damage
     
     let dieM = Math.floor(Math.random() * 5) + 1;
     let attackEvalM = monsters[message.author.id].str + monsters[message.author.id].con;
     let strengthM = attackEvalM / 5;
-    Math.round(strengthM);
-    let damageM = dieM + strengthM;
+    let strengthMR = Math.round(strengthM);
+    let damageM = dieM + strengthMR;
     users[message.author.id].hp = users[message.author.id].hp - damageM
     
     let botEmbed = new Discord.RichEmbed()
