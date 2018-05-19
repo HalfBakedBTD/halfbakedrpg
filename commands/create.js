@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
     
     let HP = Math.floor(Math.random() * 40) + 40;
     
-    let RRace = Math.floor(Math.random() * 7) + 1;
+    let RRace = Math.floor(Math.random() * 9) + 1;
     let frace = '';
     
     if (RRace = 1) {
