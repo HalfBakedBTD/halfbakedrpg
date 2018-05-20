@@ -3,7 +3,7 @@ let users = require("../users.json");
 let inv = require("../inv.json");
 let monsters = require("../monsters.json");
 
-const claim_cooldown_time = 2;
+const claim_cooldown_time = 120;
 const claim_talked_users = new Set();
 
 module.exports.run = async (bot, message, args) => {
@@ -38,7 +38,7 @@ module.exports.run = async (bot, message, args) => {
   claim_talked_users.add(message.author.id);
     setTimeout(() => {
       claim_talked_users.delete(message.author.id);
-    }, claim_cooldown_time * 60000);
+    }, claim_cooldown_time * 1000);
 }
 
 module.exports.help = {
