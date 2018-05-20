@@ -36,6 +36,9 @@ module.exports.run = async (bot, message, args) => {
       if (monsters[message.author.id].name === 'Ancient Red Dragon (BOSS #2)') {
         dieGold = dieGold + 250
       }
+      if (monsters[message.author.id].name === 'Ancient Brass Dragon (BOSS #3)') {
+        dieGold = dieGold + 600
+      }
       users[message.author.id].gold = users[message.author.id].gold + dieGold
       let dieXP = Math.floor(Math.random() * 5) + 5;
       if (monsters[message.author.id].name === 'Black Dragon (BOSS #1)') {
@@ -43,6 +46,9 @@ module.exports.run = async (bot, message, args) => {
       }
       if (monsters[message.author.id].name === 'Ancient Red Dragon (BOSS #2)') {
         dieXP = dieXP + 180
+      }
+      if (monsters[message.author.id].name === 'Ancient Brass Dragon (BOSS #3)') {
+        dieXP = dieXP + 800
       }
       users[message.author.id].xp = users[message.author.id].xp + dieXP
       let winEmbed = new Discord.RichEmbed()
