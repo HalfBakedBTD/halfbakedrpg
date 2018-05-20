@@ -45,6 +45,7 @@ module.exports.run = async (bot, message, args) => {
     message.channel.send(`${mau}, you have successfully assigned ${amount} skill points to ${type}!`)
   } else {
     message.channel.send(`${mau}, you can't assign ${type} because it doesn't exist!`)
+  }
   let overall = uid.con + uid.str + uid.dex + uid.int + uid.wis + uid.cha;
   let statsEmbed = new Discord.RichEmbed()
   .setThumbnail((message.author.displayAvatarURL))
