@@ -249,7 +249,7 @@ module.exports.run = async (bot, message, args) => {
         return;
       }
     }
-  if (users[message.author.id].quests === 19) {
+    if (users[message.author.id].quests === 19) {
       monsters[message.author.id].name = 'Ancient Red Dragon (BOSS #2)'
       monsters[message.author.id].hp = 200
       monsters[message.author.id].maxhp = 200
