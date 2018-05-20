@@ -19,9 +19,37 @@ module.exports.run = async (bot, message, args) => {
   if(parseInt(args[0]) > 10) return message.reply("you can't assign more than 10 points at  time!");
   if(amount > asp) return message.channel.send(`Sorry ${mau}, but you can't assign ${amount} points because you only have ${asp} assignable points.`);
   if(asp === 0) return message.channel.send(`Sorry ${mau}, but you have no skill points to assign.`)
-  if (type === '') {
-    
+  if (type === 'strength') {
+    uid.str = uid.str + amount
+    asp = asp - amount
+    message.channel.send(`${mau}, you have successfully assigned ${amount} skill points to ${type}!`)
+  } else if (type === 'dexterity') {
+    uid.dex = uid.dex + amount
+    asp = asp - amount
+    message.channel.send(`${mau}, you have successfully assigned ${amount} skill points to ${type}!`)
+  } else if (type === 'concentration') {
+    uid.con = uid.con + amount
+    asp = asp - amount
+    message.channel.send(`${mau}, you have successfully assigned ${amount} skill points to ${type}!`)
+  } else if (type === 'inteligence') {
+    uid.int = uid.int + amount
+    asp = asp - amount
+    message.channel.send(`${mau}, you have successfully assigned ${amount} skill points to ${type}!`)
+  } else if (type === 'wisdom') {
+    uid.wis = uid.wis + amount
+    asp = asp - amount
+    message.channel.send(`${mau}, you have successfully assigned ${amount} skill points to ${type}!`)
+  } else if (type === 'charm') {
+    uid.cha = uid.cha + amount
+    asp = asp - amount
+    message.channel.send(`${mau}, you have successfully assigned ${amount} skill points to ${type}!`)
   }
+  let overall = uid.con + uid.str + uid.dex + uid.int + uid.wis + uid.cha;
+  let statsEmbed = new Discord.RichEmbed()
+  .setThumbnail((message.author.displayAvatarURL))
+  .setColor(`${rcol}`)
+  .setDescription(`${mau}'s Stats:\nUnassigned: ${asp}\n\nStrength: ${uid.str}\nDexterity: ${uid.dex}\nConcentration: ${uid.con}\nInteligence: ${uid.int}\nWisdom: ${uid.wis}\nCharm: ${uid.cha}\n\n**Overall:** ${overall}`);
+  message.channel.send(statsEmbed)
 }
 
 module.exports.help = {
