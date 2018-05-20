@@ -4,6 +4,7 @@ let inv = require("../inv.json");
 let monsters = require("../monsters.json");
 
 module.exports.run = async (bot, message, args) => {
+  console.log("oioi");
   if(!users[message.author.id]) {
     let STR = Math.floor(Math.random() * 10) + 8;
     let DEX = Math.floor(Math.random() * 10) + 8;
