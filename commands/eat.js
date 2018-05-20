@@ -52,11 +52,14 @@ module.exports.run = async (bot, message, args) => {
     let HPG = Math.floor(Math.random() * 9) + 1;
     users[message.author.id].hp = users[message.author.id].hp + HPG
     message.reply(`you have just eaten a ${item}.`)
+  } else {
+    message.reply(`you can't eat a ${item} because it doesn't exist in my files.`)
+    return;
   }
-  if (user[message.author.id].hp > user[message.author.id].maxhp) {
-    user[message.author.id].hp = user[message.author.id].maxhp
+  if (users[message.author.id].hp > users[message.author.id].maxhp) {
+    users[message.author.id].hp = users[message.author.id].maxhp
   }
-  message.channel.send(`[Health: ${user[message.author.id].hp}/${user[message.author.id].maxhp}]`)
+  message.channel.send(`[Health: ${users[message.author.id].hp}/${users[message.author.id].maxhp}]`)
 }
 
 module.exports.help = {
