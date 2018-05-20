@@ -60,7 +60,7 @@ module.exports.run = async (bot, message, args) => {
       return;
     }
   } else {
-    if (users[message.author.id].quests < 10) {
+    if (users[message.author.id].quests < 9) {
       let die = Math.floor(Math.random() * 9) + 1;
       if (die === 1) {
         monsters[message.author.id].name = 'Aarakocra'
@@ -141,7 +141,7 @@ module.exports.run = async (bot, message, args) => {
         return;
       }
     }
-    if (users[message.author.id].quests === 10) {
+    if (users[message.author.id].quests === 9) {
       monsters[message.author.id].name = 'Black Dragon (BOSS #1)'
       monsters[message.author.id].hp = 140
       monsters[message.author.id].maxhp = 140
