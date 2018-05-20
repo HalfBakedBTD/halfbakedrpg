@@ -57,7 +57,6 @@ module.exports.run = async (bot, message, args) => {
       .setDescription(`**Quest Failed!**\n+1 deaths.\n-${goldLoss} gold.`)
       .setFooter(`${message.author.username} has lost the battle against ${monsters[message.author.id].name}.`, message.author.displayAvatarURL);
       message.channel.send(looseEmbed);
-      monsters[message.author.id].name = ''
       return;
     }
   } else {
