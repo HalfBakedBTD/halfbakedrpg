@@ -173,8 +173,8 @@ module.exports.run = async (bot, message, args) => {
       let die = Math.floor(Math.random() * 5) + 1;
       if (die === 1) {
         monsters[message.author.id].name = 'Air Elemental'
-        monsters[message.author.id].hp = 75
-        monsters[message.author.id].maxhp = 75
+        monsters[message.author.id].hp = 92
+        monsters[message.author.id].maxhp = 92
         monsters[message.author.id].str = 14
         monsters[message.author.id].con = 20
         let pickEmbed = new Discord.RichEmbed()
@@ -186,8 +186,8 @@ module.exports.run = async (bot, message, args) => {
       }
       if (die === 2) {
         monsters[message.author.id].name = 'Albino Dwarf Worrior'
-        monsters[message.author.id].hp = 80
-        monsters[message.author.id].maxhp = 80
+        monsters[message.author.id].hp = 99
+        monsters[message.author.id].maxhp = 99
         monsters[message.author.id].str = 18
         monsters[message.author.id].con = 15
         let pickEmbed = new Discord.RichEmbed()
@@ -199,8 +199,8 @@ module.exports.run = async (bot, message, args) => {
       }
       if (die === 3) {
         monsters[message.author.id].name = 'Alhoon'
-        monsters[message.author.id].hp = 68
-        monsters[message.author.id].maxhp = 68
+        monsters[message.author.id].hp = 121
+        monsters[message.author.id].maxhp = 121
         monsters[message.author.id].str = 14
         monsters[message.author.id].con = 18
         let pickEmbed = new Discord.RichEmbed()
@@ -212,8 +212,8 @@ module.exports.run = async (bot, message, args) => {
       }
       if (die === 4) {
         monsters[message.author.id].name = 'Alkilith'
-        monsters[message.author.id].hp = 66
-        monsters[message.author.id].maxhp = 66
+        monsters[message.author.id].hp = 118
+        monsters[message.author.id].maxhp = 118
         monsters[message.author.id].str = 19
         monsters[message.author.id].con = 16
         let pickEmbed = new Discord.RichEmbed()
@@ -225,8 +225,8 @@ module.exports.run = async (bot, message, args) => {
       }
       if (die === 5) {
         monsters[message.author.id].name = 'Yusdrayl'
-        monsters[message.author.id].hp = 82
-        monsters[message.author.id].maxhp = 82
+        monsters[message.author.id].hp = 102
+        monsters[message.author.id].maxhp = 102
         monsters[message.author.id].str = 18
         monsters[message.author.id].con = 18
         let pickEmbed = new Discord.RichEmbed()
@@ -238,8 +238,8 @@ module.exports.run = async (bot, message, args) => {
       }
       if (die === 6) {
         monsters[message.author.id].name = 'Zaratan'
-        monsters[message.author.id].hp = 78
-        monsters[message.author.id].maxhp = 78
+        monsters[message.author.id].hp = 114
+        monsters[message.author.id].maxhp = 114
         monsters[message.author.id].str = 25
         monsters[message.author.id].con = 13
         let pickEmbed = new Discord.RichEmbed()
@@ -252,8 +252,8 @@ module.exports.run = async (bot, message, args) => {
     }
     if (users[message.author.id].quests === 19) {
       monsters[message.author.id].name = 'Ancient Red Dragon (BOSS #2)'
-      monsters[message.author.id].hp = 200
-      monsters[message.author.id].maxhp = 200
+      monsters[message.author.id].hp = 240
+      monsters[message.author.id].maxhp = 240
       monsters[message.author.id].str = 32
       monsters[message.author.id].con = 28
       let pickEmbed = new Discord.RichEmbed()
