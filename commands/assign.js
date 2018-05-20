@@ -43,11 +43,12 @@ module.exports.run = async (bot, message, args) => {
     uid.cha = uid.cha + amount
     asp = asp - amount
     message.channel.send(`${mau}, you have successfully assigned ${amount} skill points to ${type}!`)
-  }
+  } else {
+    message.channel.send(`${mau}, you can't assign ${type} because it doesn't exist!`)
   let overall = uid.con + uid.str + uid.dex + uid.int + uid.wis + uid.cha;
   let statsEmbed = new Discord.RichEmbed()
   .setThumbnail((message.author.displayAvatarURL))
-  .setColor(`${rcol}`)
+  .setColor("#00cec9")
   .setDescription(`${mau}'s Stats:\nUnassigned: ${asp}\n\nStrength: ${uid.str}\nDexterity: ${uid.dex}\nConcentration: ${uid.con}\nInteligence: ${uid.int}\nWisdom: ${uid.wis}\nCharm: ${uid.cha}\n\n**Overall:** ${overall}`);
   message.channel.send(statsEmbed)
 }
