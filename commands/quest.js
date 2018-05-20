@@ -69,6 +69,8 @@ module.exports.run = async (bot, message, args) => {
       users[message.author.id].lvl = users[message.author.id].lvl + 1
       users[message.author.id].xp = 0
       users[message.author.id].asp = users[message.author.id].asp + 4
+      users[message.author.id].maxhp = users[message.author.id].maxhp * 2
+      users[message.author.id].hp = users[message.author.id].maxhp
       message.channel.send(`${message.author.username} has leveled up and gained 4 assignable skill points!`)
     }
   } else {
