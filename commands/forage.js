@@ -13,27 +13,22 @@ module.exports.run = async (bot, message, args) => {
   if (die === 1) {
     inv[message.author.id].apple = inv[message.author.id].apple + 1
     message.channel.send("🌲 You went foraging and found an apple! 🌴");
-    return;
   }
   if (die === 2) {
     inv[message.author.id].grape = inv[message.author.id].grape + 1
     message.channel.send("🌲 You went foraging and found a grape! 🌴");
-    return;
   }
   if (die === 3) {
     inv[message.author.id].tomato = inv[message.author.id].tomato + 1
     message.channel.send("🌲 You went foraging and found a tomato! 🌴");
-    return;
   }
   if (die === 4) {
     inv[message.author.id].corn = inv[message.author.id].corn + 1
     message.channel.send("🌲 You went foraging and found a corn! 🌴");
-    return;
   }
   if (die === 5) {
     inv[message.author.id].egg = inv[message.author.id].egg + 1
     message.channel.send("🌲 You went foraging and found an egg! 🌴");
-    return;
   }
   claim_talked_users.add(message.author.id);
     setTimeout(() => {
