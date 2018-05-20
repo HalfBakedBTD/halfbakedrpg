@@ -166,7 +166,6 @@ module.exports.run = async (bot, message, args) => {
       message.channel.send(pickEmbed);
       return;
     }
-  }
   if (users[message.author.id].quests < 19) {
     if (!users[message.author.id].quests > 10) return;
       let die = Math.floor(Math.random() * 5) + 1;
