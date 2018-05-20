@@ -106,6 +106,19 @@ module.exports.run = async (bot, message, args) => {
       message.channel.send(pickEmbed);
       return;
     }
+    if (users[message.author.id].quests === 10) {
+      monsters[message.author.id].name = 'Black Dragon (BOSS #1)'
+      monsters[message.author.id].hp = 140
+      monsters[message.author.id].maxhp = 140
+      monsters[message.author.id].str = 27
+      monsters[message.author.id].con = 23
+      let pickEmbed = new Discord.RichEmbed()
+      .setColor('#7f8c8d')
+      .setDescription(`**__Quest Found!__**\n**Opponent:** ${monsters[message.author.id].name}\n**Health:** ${monsters[message.author.id].hp}/${monsters[message.author.id].maxhp}\n**Strength:** ${monsters[message.author.id].str}\n**Concentration:** ${monsters[message.author.id].con}`)
+      .setFooter(`${message.author.username} has been selected to battle against ${monsters[message.author.id].name}.`, message.author.displayAvatarURL);
+      message.channel.send(pickEmbed);
+      return;
+    }
   }
 }
 
