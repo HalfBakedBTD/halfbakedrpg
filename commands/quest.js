@@ -31,12 +31,18 @@ module.exports.run = async (bot, message, args) => {
       let dieGold = Math.floor(Math.random() * 5) + 1;
       dieGold = dieGold * users[message.author.id].lvl
       if (monsters[message.author.id].name === 'Black Dragon (BOSS #1)') {
-        dieGold = dieGold + 150
+        dieGold = dieGold + 140
+      }
+      if (monsters[message.author.id].name === 'Ancient Red Dragon (BOSS #2)') {
+        dieGold = dieGold + 250
       }
       users[message.author.id].gold = users[message.author.id].gold + dieGold
       let dieXP = Math.floor(Math.random() * 5) + 5;
       if (monsters[message.author.id].name === 'Black Dragon (BOSS #1)') {
         dieXP = dieXP + 100
+      }
+      if (monsters[message.author.id].name === 'Ancient Red Dragon (BOSS #2)') {
+        dieXP = dieXP + 180
       }
       users[message.author.id].xp = users[message.author.id].xp + dieXP
       let winEmbed = new Discord.RichEmbed()
@@ -45,7 +51,6 @@ module.exports.run = async (bot, message, args) => {
       .setFooter(`${message.author.username} has won the battle against ${monsters[message.author.id].name}.`, message.author.displayAvatarURL);
       message.channel.send(winEmbed);
       monsters[message.author.id].name = ''
-      return;
     }
     if (users[message.author.id].hp < 1) {
       users[message.author.id].deaths = users[message.author.id].deaths + 1
@@ -57,11 +62,18 @@ module.exports.run = async (bot, message, args) => {
       .setDescription(`**Quest Failed!**\n+1 deaths.\n-${goldLoss} gold.`)
       .setFooter(`${message.author.username} has lost the battle against ${monsters[message.author.id].name}.`, message.author.displayAvatarURL);
       message.channel.send(looseEmbed);
-      return;
+    }
+    let lvl = users[message.author.id].lvl;
+    let lvlUpXP = users[message.author.id].lvl * 50;
+    if (users[message.author.id].xp > lvlUpXP) {
+      users[message.author.id].lvl = users[message.author.id].lvl + 1
+      users[message.author.id].xp = 0
+      users[message.author.id].asp = users[message.author.id].asp + 4
+      message.channel.send(`${message.author.username} has leveled up and gained 4 assignable skill points!`)
     }
   } else {
     if (users[message.author.id].quests < 9) {
-      let die = Math.floor(Math.random() * 9) + 1;
+      let die = Math.floor(Math.random() * 5) + 1;
       if (die === 1) {
         monsters[message.author.id].name = 'Aarakocra'
         monsters[message.author.id].hp = 50
@@ -147,6 +159,102 @@ module.exports.run = async (bot, message, args) => {
       monsters[message.author.id].maxhp = 140
       monsters[message.author.id].str = 27
       monsters[message.author.id].con = 23
+      let pickEmbed = new Discord.RichEmbed()
+      .setColor('#7f8c8d')
+      .setDescription(`**__Quest Found!__**\n**Opponent:** ${monsters[message.author.id].name}\n**Health:** ${monsters[message.author.id].hp}/${monsters[message.author.id].maxhp}\n**Strength:** ${monsters[message.author.id].str}\n**Concentration:** ${monsters[message.author.id].con}`)
+      .setFooter(`${message.author.username} has been selected to battle against ${monsters[message.author.id].name}.`, message.author.displayAvatarURL);
+      message.channel.send(pickEmbed);
+      return;
+    }
+  }
+  if (users[message.author.id].quests < 19) {
+    if (!users[message.author.id].quests > 10) return;
+      let die = Math.floor(Math.random() * 5) + 1;
+      if (die === 1) {
+        monsters[message.author.id].name = 'Air Elemental'
+        monsters[message.author.id].hp = 75
+        monsters[message.author.id].maxhp = 75
+        monsters[message.author.id].str = 14
+        monsters[message.author.id].con = 20
+        let pickEmbed = new Discord.RichEmbed()
+        .setColor('#7f8c8d')
+        .setDescription(`**__Quest Found!__**\n**Opponent:** ${monsters[message.author.id].name}\n**Health:** ${monsters[message.author.id].hp}/${monsters[message.author.id].maxhp}\n**Strength:** ${monsters[message.author.id].str}\n**Concentration:** ${monsters[message.author.id].con}`)
+        .setFooter(`${message.author.username} has been selected to battle against ${monsters[message.author.id].name}.`, message.author.displayAvatarURL);
+        message.channel.send(pickEmbed);
+        return;
+      }
+      if (die === 2) {
+        monsters[message.author.id].name = 'Albino Dwarf Worrior'
+        monsters[message.author.id].hp = 80
+        monsters[message.author.id].maxhp = 80
+        monsters[message.author.id].str = 18
+        monsters[message.author.id].con = 15
+        let pickEmbed = new Discord.RichEmbed()
+        .setColor('#7f8c8d')
+        .setDescription(`**__Quest Found!__**\n**Opponent:** ${monsters[message.author.id].name}\n**Health:** ${monsters[message.author.id].hp}/${monsters[message.author.id].maxhp}\n**Strength:** ${monsters[message.author.id].str}\n**Concentration:** ${monsters[message.author.id].con}`)
+        .setFooter(`${message.author.username} has been selected to battle against ${monsters[message.author.id].name}.`, message.author.displayAvatarURL);
+        message.channel.send(pickEmbed);
+        return;
+      }
+      if (die === 3) {
+        monsters[message.author.id].name = 'Alhoon'
+        monsters[message.author.id].hp = 68
+        monsters[message.author.id].maxhp = 68
+        monsters[message.author.id].str = 14
+        monsters[message.author.id].con = 18
+        let pickEmbed = new Discord.RichEmbed()
+        .setColor('#7f8c8d')
+        .setDescription(`**__Quest Found!__**\n**Opponent:** ${monsters[message.author.id].name}\n**Health:** ${monsters[message.author.id].hp}/${monsters[message.author.id].maxhp}\n**Strength:** ${monsters[message.author.id].str}\n**Concentration:** ${monsters[message.author.id].con}`)
+        .setFooter(`${message.author.username} has been selected to battle against ${monsters[message.author.id].name}.`, message.author.displayAvatarURL);
+        message.channel.send(pickEmbed);
+        return;
+      }
+      if (die === 4) {
+        monsters[message.author.id].name = 'Alkilith'
+        monsters[message.author.id].hp = 66
+        monsters[message.author.id].maxhp = 66
+        monsters[message.author.id].str = 19
+        monsters[message.author.id].con = 16
+        let pickEmbed = new Discord.RichEmbed()
+        .setColor('#7f8c8d')
+        .setDescription(`**__Quest Found!__**\n**Opponent:** ${monsters[message.author.id].name}\n**Health:** ${monsters[message.author.id].hp}/${monsters[message.author.id].maxhp}\n**Strength:** ${monsters[message.author.id].str}\n**Concentration:** ${monsters[message.author.id].con}`)
+        .setFooter(`${message.author.username} has been selected to battle against ${monsters[message.author.id].name}.`, message.author.displayAvatarURL);
+        message.channel.send(pickEmbed);
+        return;
+      }
+      if (die === 5) {
+        monsters[message.author.id].name = 'Yusdrayl'
+        monsters[message.author.id].hp = 82
+        monsters[message.author.id].maxhp = 82
+        monsters[message.author.id].str = 18
+        monsters[message.author.id].con = 18
+        let pickEmbed = new Discord.RichEmbed()
+        .setColor('#7f8c8d')
+        .setDescription(`**__Quest Found!__**\n**Opponent:** ${monsters[message.author.id].name}\n**Health:** ${monsters[message.author.id].hp}/${monsters[message.author.id].maxhp}\n**Strength:** ${monsters[message.author.id].str}\n**Concentration:** ${monsters[message.author.id].con}`)
+        .setFooter(`${message.author.username} has been selected to battle against ${monsters[message.author.id].name}.`, message.author.displayAvatarURL);
+        message.channel.send(pickEmbed);
+        return;
+      }
+      if (die === 6) {
+        monsters[message.author.id].name = 'Zaratan'
+        monsters[message.author.id].hp = 78
+        monsters[message.author.id].maxhp = 78
+        monsters[message.author.id].str = 25
+        monsters[message.author.id].con = 13
+        let pickEmbed = new Discord.RichEmbed()
+        .setColor('#7f8c8d')
+        .setDescription(`**__Quest Found!__**\n**Opponent:** ${monsters[message.author.id].name}\n**Health:** ${monsters[message.author.id].hp}/${monsters[message.author.id].maxhp}\n**Strength:** ${monsters[message.author.id].str}\n**Concentration:** ${monsters[message.author.id].con}`)
+        .setFooter(`${message.author.username} has been selected to battle against ${monsters[message.author.id].name}.`, message.author.displayAvatarURL);
+        message.channel.send(pickEmbed);
+        return;
+      }
+    }
+  if (users[message.author.id].quests === 19) {
+      monsters[message.author.id].name = 'Ancient Red Dragon (BOSS #2)'
+      monsters[message.author.id].hp = 200
+      monsters[message.author.id].maxhp = 200
+      monsters[message.author.id].str = 32
+      monsters[message.author.id].con = 28
       let pickEmbed = new Discord.RichEmbed()
       .setColor('#7f8c8d')
       .setDescription(`**__Quest Found!__**\n**Opponent:** ${monsters[message.author.id].name}\n**Health:** ${monsters[message.author.id].hp}/${monsters[message.author.id].maxhp}\n**Strength:** ${monsters[message.author.id].str}\n**Concentration:** ${monsters[message.author.id].con}`)
