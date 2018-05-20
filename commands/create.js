@@ -108,7 +108,8 @@ module.exports.run = async (bot, message, args) => {
       con: CON,
       int: INT,
       wis: WIS,
-      cha: CHA
+      cha: CHA,
+      deaths: 0
     }
     
     monsters[message.author.id] = {
