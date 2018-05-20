@@ -30,8 +30,14 @@ module.exports.run = async (bot, message, args) => {
       users[message.author.id].quests = users[message.author.id].quests + 1
       let dieGold = Math.floor(Math.random() * 5) + 1;
       dieGold = dieGold * users[message.author.id].lvl
+      if (monsters[message.author.id].name === 'Black Dragon (BOSS #1)') {
+        dieGold = dieGold + 150
+      }
       users[message.author.id].gold = users[message.author.id].gold + dieGold
-      let dieXP = Math.floor(Math.random() * 5) + 1;
+      let dieXP = Math.floor(Math.random() * 5) + 5;
+      if (monsters[message.author.id].name === 'Black Dragon (BOSS #1)') {
+        dieXP = dieXP + 100
+      }
       users[message.author.id].xp = users[message.author.id].xp + dieXP
       let winEmbed = new Discord.RichEmbed()
       .setColor('#2ecc71')
