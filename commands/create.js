@@ -103,6 +103,7 @@ module.exports.run = async (bot, message, args) => {
       gold: GOLD,
       weapon: 'fists',
       quests: 0,
+      asp: 2,
       str: STR,
       dex: DEX,
       con: CON,
