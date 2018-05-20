@@ -7,6 +7,7 @@ module.exports.run = async (bot, message, args) => {
   if(!users[message.author.id]) return message.reply("Please use 'create' to make a charecter before using this command!");
   let item = args[0];
   if(!item) return message.channel.send("What do you want to eat? Let me know in the command! (Example: `eat egg`)");
+  users[message.author.id].hp = users[message.author.id].hp + 10
   if (item === 'apple') {
     if (inv[message.author.id].apple < 1) {
       message.channel.send(`You do not own an ${item} which you can eat.`);
