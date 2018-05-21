@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 let users = require("../users.json");
 let inv = require("../inv.json");
-
+//5005nji5g4wnjifsnjen7tf4ionhi7drsj4
 module.exports.run = async (bot, message, args) => {
   if(!inv[message.author.id]) return message.reply("Please use 'create' to make a charecter before using this command!");
   let item = args[0];
