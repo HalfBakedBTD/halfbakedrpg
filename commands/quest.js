@@ -429,6 +429,79 @@ module.exports.run = async (bot, message, args) => {
       message.channel.send(pickEmbed);
       return;
     }
+    if (users[message.author.id].quests > 49) {
+      monsters[message.author.id].hp = 50 * users[message.author.id].quests
+      monsters[message.author.id].maxhp = monsters[message.author.id].hp
+      let strM = Math.floor(Math.random() * 9) - 5;
+      let conM = Math.floor(Math.random() * 9) - 5;
+      monsters[message.author.id].str = users[message.author.id].str + strM
+      monsters[message.author.id].con = users[message.author.id].con + conM
+      let die = Math.floor(Math.random() * 20) + 1;
+      if (die === 1) {
+        monsters[message.author.id].name = 'Shull'
+      }
+      if (die === 2) {
+        monsters[message.author.id].name = 'Shull Spore Servant'
+      }
+      if (die === 3) {
+        monsters[message.author.id].name = 'Clay Golem'
+      }
+      if (die === 4) {
+        monsters[message.author.id].name = 'Cloaker'
+      }
+      if (die === 5) {
+        monsters[message.author.id].name = 'Chwinga'
+      }
+      if (die === 6) {
+        monsters[message.author.id].name = 'Clound Giant'
+      }
+      if (die === 7) {
+        monsters[message.author.id].name = 'Cockatrice'
+      }
+      if (die === 8) {
+        monsters[message.author.id].name = 'Crushing Wave Priest'
+      }
+      if (die === 9) {
+        monsters[message.author.id].name = 'Cult Fanatic'
+      }
+      if (die === 10) {
+        monsters[message.author.id].name = 'Cultist'
+      }
+      if (die === 11) {
+        monsters[message.author.id].name = 'Cyclops'
+      }
+      if (die === 12) {
+        monsters[message.author.id].name = 'Dao'
+      }
+      if (die === 13) {
+        monsters[message.author.id].name = 'Darkling'
+      }
+      if (die === 14) {
+        monsters[message.author.id].name = 'Death Dog'
+      }
+      if (die === 15) {
+        monsters[message.author.id].name = 'Deathlock Mastermind'
+      }
+      if (die === 16) {
+        monsters[message.author.id].name = 'Decapus'
+      }
+      if (die === 17) {
+        monsters[message.author.id].name = 'Dragonclaw'
+      }
+      if (die === 18) {
+        monsters[message.author.id].name = 'Droki'
+      }
+      if (die === 19) {
+        monsters[message.author.id].name = 'Drow'
+      }
+      if (die === 20) {
+        monsters[message.author.id].name = 'Dybukk'
+      }
+      if (die === 21) {
+        monsters[message.author.id].name = 'Eblis'
+      }
+      
+    }
   }
 }
 
