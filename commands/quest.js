@@ -7,6 +7,18 @@ module.exports.run = async (bot, message, args) => {
   if(!users[message.author.id]) return message.reply("Please use 'create' to make a charecter before using this command!");
   if (monsters[message.author.id].name !== '') {
     let die = Math.floor(Math.random() * 5) + 1;
+    if (users[message.author.id].weapon === 'fists') {
+      die = die + 1
+    }
+    if (users[message.author.id].weapon === 'dagger') {
+      die = die + 2
+    }
+    if (users[message.author.id].weapon === 'sword') {
+      die = die + 4
+    }
+    if (users[message.author.id].weapon === 'mace') {
+      die = die + 4
+    }
     let attackEval = users[message.author.id].str + users[message.author.id].con;
     let strength = attackEval / 5;
     let strengthR = Math.round(strength);
