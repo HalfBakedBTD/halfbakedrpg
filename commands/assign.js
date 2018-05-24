@@ -17,8 +17,11 @@ module.exports.run = async (bot, message, args) => {
   if(isNaN(args[0])) return message.channel.send("You have provided invalid arguments! Use the command by providing an amount of points to assign then provide what to assign it to. (Example: `assign 1 strength`)");
   if(parseInt(args[0]) < 1) return message.reply("you can't assign less than 1 point at  time!");
   if(parseInt(args[0]) > 10) return message.reply("you can't assign more than 10 points at  time!");
-  if(amount > asp) return message.channel.send(`Sorry ${mau}, but you can't assign ${amount} points because you only have ${asp} assignable points.`);
-  if(asp === 0) return message.channel.send(`Sorry ${mau}, but you have no skill points to assign.`)
+  if (amount > asp) {
+    message.channel.send(`Sorry ${mau}, but you can't assign ${amount} points because you only have ${asp} assignable points.`)
+    return;
+  }
+  if(asp === 0) return message.channel.send(`Sorry ${mau}, but you have no skill points to assign.`);
   if (type === 'strength') {
     uid.str = uid.str + amount
     asp = asp - amount
