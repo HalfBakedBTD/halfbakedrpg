@@ -24,27 +24,27 @@ module.exports.run = async (bot, message, args) => {
   if(asp === 0) return message.channel.send(`Sorry ${mau}, but you have no skill points to assign.`);
   if (type === 'strength') {
     uid.str = uid.str + amount
-    asp = asp - amount
+    users[message.author.id].asp = asp - amount
     message.channel.send(`${mau}, you have successfully assigned ${amount} skill points to ${type}!`)
   } else if (type === 'dexterity') {
     uid.dex = uid.dex + amount
-    asp = asp - amount
+    users[message.author.id].asp = asp - amount
     message.channel.send(`${mau}, you have successfully assigned ${amount} skill points to ${type}!`)
   } else if (type === 'concentration') {
     uid.con = uid.con + amount
-    asp = asp - amount
+    users[message.author.id].asp = asp - amount
     message.channel.send(`${mau}, you have successfully assigned ${amount} skill points to ${type}!`)
   } else if (type === 'inteligence') {
     uid.int = uid.int + amount
-    asp = asp - amount
+    users[message.author.id].asp = asp - amount
     message.channel.send(`${mau}, you have successfully assigned ${amount} skill points to ${type}!`)
   } else if (type === 'wisdom') {
     uid.wis = uid.wis + amount
-    asp = asp - amount
+    users[message.author.id].asp = asp - amount
     message.channel.send(`${mau}, you have successfully assigned ${amount} skill points to ${type}!`)
   } else if (type === 'charm') {
     uid.cha = uid.cha + amount
-    asp = asp - amount
+    users[message.author.id].asp = asp - amount
     message.channel.send(`${mau}, you have successfully assigned ${amount} skill points to ${type}!`)
   } else {
     message.channel.send(`${mau}, you can't assign ${type} because it doesn't exist!`)
